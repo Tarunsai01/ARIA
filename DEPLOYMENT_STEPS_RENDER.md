@@ -41,10 +41,10 @@ Fill in the service configuration:
 
 **Basic Settings:**
 - **Name**: `aria-backend` (or any name you like)
+- **Language**: `Python 3` ⚠️ **IMPORTANT: Select Python, NOT Docker!**
 - **Region**: Choose closest to you (e.g., `Oregon (US West)`)
 - **Branch**: `main`
 - **Root Directory**: `backend` ⚠️ **IMPORTANT: Set this!**
-- **Runtime**: `Python 3`
 - **Build Command**: `pip install -r requirements.txt`
 - **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 

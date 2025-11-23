@@ -6,6 +6,7 @@
 2. ✅ New + → Web Service → Connect `Tarunsai01/ARIA` repo
 3. ✅ Configure:
    - Name: `aria-backend`
+   - **Language**: `Python 3` ⚠️ **NOT Docker!**
    - Root Directory: `backend` ⚠️ **IMPORTANT!**
    - Build Command: `pip install -r requirements.txt`
    - Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
