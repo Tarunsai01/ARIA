@@ -42,3 +42,11 @@ temp/
 tmp/
 *.tmp
 
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# User files
+backend/user_files/
+
