@@ -1,16 +1,20 @@
 # Quick Deployment Checklist
 
-## 🚂 Railway (Backend) - 5 Steps
+## 🚀 Render (Backend) - 6 Steps
 
-1. ✅ Go to https://railway.app → Sign in with GitHub
-2. ✅ New Project → Deploy from GitHub → Select `Tarunsai01/ARIA`
-3. ✅ Settings → Source → Root Directory: `backend`
-4. ✅ Variables → Add:
+1. ✅ Go to https://render.com → Sign in with GitHub
+2. ✅ New + → Web Service → Connect `Tarunsai01/ARIA` repo
+3. ✅ Configure:
+   - Name: `aria-backend`
+   - Root Directory: `backend` ⚠️ **IMPORTANT!**
+   - Build Command: `pip install -r requirements.txt`
+   - Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+4. ✅ Environment → Add Variables:
    - `SECRET_KEY` = (generate below)
    - `ENCRYPTION_KEY` = (generate below)
    - `CORS_ORIGINS` = (add after Vercel deployment)
-5. ✅ Settings → Deploy → Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-6. ✅ Copy backend URL from Settings → Networking
+5. ✅ Create Web Service → Wait for deployment
+6. ✅ Copy backend URL (e.g., `https://aria-backend.onrender.com`)
 
 ## 🎨 Vercel (Frontend) - 4 Steps
 
@@ -23,8 +27,9 @@
 
 ## 🔗 Connect Them
 
-1. ✅ Update Railway `CORS_ORIGINS` with Vercel URL
-2. ✅ Test both URLs work
+1. ✅ Update Render `CORS_ORIGINS` with Vercel URL (Environment tab)
+2. ✅ Wait 2-3 minutes for redeploy
+3. ✅ Test both URLs work
 
 ## 🔑 Generate Keys (Run Locally)
 
@@ -38,5 +43,5 @@ python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().d
 
 ---
 
-**Full detailed guide**: See `DEPLOYMENT_STEPS.md`
+**Full detailed guide**: See `DEPLOYMENT_STEPS_RENDER.md`
 
